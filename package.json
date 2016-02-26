@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "serve": "nodemon serve.js",
+    "serve": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -36,6 +36,7 @@
     "bower": "^1.7.7",
     "express": "^4.13.4",
     "jade": "^1.11.0",
+    "method-override": "^2.3.5",
     "sqlite3": "^3.1.1"
   },
   "devDependencies": {
