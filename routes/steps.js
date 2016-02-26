@@ -8,10 +8,10 @@ const ctrl = require('../controllers/steps.js');
 router.get('/steps', ctrl.index);
 
 // // POST new step
-// router.post('/steps', ctrl.create);
+router.post('/steps', ctrl.create);
 
 // // GET new step form
-// router.get('/steps/new', ctrl.newStep);
+router.get('/steps/new', ctrl.newStep);
 
 // //GET show step
 // router.get('/steps/:id', ctrl.show);

@@ -4,22 +4,15 @@ const sqlite3 = require('sqlite3');
 const db = new sqlite3.Database('./db/node-fit.sqlite');
 
 module.exports = {
-  // get all notes
+  // get all steps
   index (req, res) {
     res.render('index');
-  }
+  },
 
-  // new note form
-  // newStep (req, res) {
-  //   Category.find({}, (err, categories) => {
-  //     if (err) throw err;
-
-  //     res.render('new-note', {
-  //       title: 'New Note',
-  //       categories: categories
-  //     });
-  //   });
-  // },
+  // new step form
+  newStep (req, res) {
+    res.render('new-step');
+  },
 
   // // show note
   // show (req, res) {
@@ -28,14 +21,12 @@ module.exports = {
   //   });
   // },
 
-  // // create note
-  // create (req, res) {
-  //   Note.create(req.body, (err, note) => {
-  //     if (err) throw err;
-  //     console.log('note: ', note);
-  //     res.redirect(`/notes/${note._id}`);
-  //   });
-  // },
+  // // create step
+  create (req, res) {
+    console.log('>>>>>', req.body);
+    console.log(typeof(req.body.stepNumber));
+    res.send('SAVED!');
+  }
 
   // // delete note
   // destroy (req, res) {

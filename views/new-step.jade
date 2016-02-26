@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .spacer
+  .container
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+        h1 New Step
+
+        form(class='form', method='POST', action="/steps")
+          .form-group
+            label Date
+            input.form-control(type="date", name='stepDate', value='')
+          .form-group
+            label Number Of Steps
+            input.form-control(type="number", name='stepNumber', value='')
+          button(type="submit" class="btn btn-primary") Save Steps
+
+
