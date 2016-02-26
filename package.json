@@ -12,6 +12,18 @@
     "type": "git",
     "url": "git+https://github.com/albennett/node-fit.git"
   },
+  "eslintConfig": {
+    "env": {
+      "mocha": true,
+      "node": true,
+      "es6": true,
+      "jquery": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+      "no-console": 0
+    }
+  },
   "keywords": [],
   "author": "Amy Lee Bennett <amyleeannebennett@gmail.com> (https://www.amylee.co/)",
   "license": "MIT",
