@@ -6,7 +6,16 @@ const db = new sqlite3.Database('./db/node-fit.sqlite');
 module.exports = {
   // get all steps
   index (req, res) {
-    res.render('index');
+    db.all('SELECT Steps_number, Steps_date FROM Steps', (err, data) => {
+      if (err) throw err;
+      console.log("data", data);
+      res.send(data);
+        // res.render('index', {
+        //   steps: data.Steps_number,
+        //   stepDate: data.Steps_date
+        // });
+    });
+      // res.render('index');
   },
 
   // new step form
@@ -14,12 +23,12 @@ module.exports = {
     res.render('new-step');
   },
 
-  // // show note
-  // show (req, res) {
-  //   res.render('show-note', {
-  //     note: req.note
-  //   });
-  // },
+  // show step
+  show (req, res) {
+    res.render('show-note', {
+      note: req.note
+    });
+  },
 
   // // create step
   create (req, res) {

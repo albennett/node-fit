@@ -14,7 +14,7 @@ router.post('/steps', ctrl.create);
 router.get('/steps/new', ctrl.newStep);
 
 // //GET show step
-// router.get('/steps/:id', ctrl.show);
+router.get('/steps/:id', ctrl.show);
 
 // // DELETE step
 // router.delete('/steps/:id', ctrl.destroy);
