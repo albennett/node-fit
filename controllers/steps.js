@@ -25,7 +25,13 @@ module.exports = {
   create (req, res) {
     console.log('>>>>>', req.body);
     console.log(typeof(req.body.stepNumber));
-    res.send('SAVED!');
+    db.run(`INSERT INTO Steps VALUES(NULL, $date, $steps)`, {
+          $date: req.body.stepDate,
+          $steps: +req.body.stepNumber
+      }, (err) => {
+        if (err) throw err;
+        res.send('SAVED STEPS!');
+      });
   }
 
   // // delete note
