@@ -65,11 +65,11 @@ module.exports = {
 
   // update note
   update (req, res) {
-    console.log(req.params.id);
-    db.run(`UPDATE Steps SET Steps_date = $date, Steps_number = $steps WHERE StepsID = $id;`, {
+    console.log(typeof(req.params.id));
+    db.run(`UPDATE Steps SET Steps_date = $date, Steps_number = $steps WHERE StepID = $id;`, {
           $date: req.body.stepDate,
           $steps: +req.body.stepNumber,
-          $id: req.params.id
+          $id: +req.params.id
       }, function (err) {
         console.log('UPDATED', this.changes);
         res.redirect('/steps');
