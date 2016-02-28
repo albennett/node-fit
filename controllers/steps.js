@@ -28,8 +28,9 @@ module.exports = {
     db.run(`INSERT INTO Steps VALUES(NULL, $date, $steps)`, {
           $date: req.body.stepDate,
           $steps: +req.body.stepNumber
-      }, (err) => {
+      }, function (err) {
         if (err) throw err;
+        console.log('last ID', this.lastID);
         res.send('SAVED STEPS!');
       });
   }
