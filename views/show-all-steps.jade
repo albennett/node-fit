@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-lg-12.col-md-12
+        h1 Show All Steps
+
+        table(class='table table-hover')
+          caption Steps
+          tr
+            th Date
+            th Number Of Steps
+
+          each step in steps
+            tr
+              td #{step.Steps_date}
+              td #{step.Steps_number}
+              td
+                a(href="/steps/#{step.StepID}/edit") Edit

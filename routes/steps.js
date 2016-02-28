@@ -5,7 +5,7 @@ const router = express.Router();
 const ctrl = require('../controllers/steps.js');
 
 // GET all steps
-router.get('/steps', ctrl.index);
+router.get('/steps', ctrl.showAllSteps);
 
 // // POST new step
 router.post('/steps', ctrl.create);
@@ -19,10 +19,10 @@ router.get('/steps/new', ctrl.newStep);
 // // DELETE step
 // router.delete('/steps/:id', ctrl.destroy);
 
-// // UPDATE step
-// router.put('/steps/:id', ctrl.update);
+// UPDATE step
+router.put('/steps/:id', ctrl.update);
 
-// // EDIT step
-// router.get('/steps/:id/edit', ctrl.edit);
+// EDIT step
+router.get('/steps/:id/edit', ctrl.edit);
 
 module.exports = router;

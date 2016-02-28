@@ -28,7 +28,7 @@ app.use(methodOverride('_method'));
 app.use(steps);
 
 app.get('/', (req, res) => {
-  res.send('hello');
+  res.render('index');
 });
 
 app.listen(PORT, () => {
