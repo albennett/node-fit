@@ -16,8 +16,8 @@ router.get('/steps/new', ctrl.newStep);
 // //GET show step
 // router.get('/steps/:id', ctrl.show);
 
-// // DELETE step
-// router.delete('/steps/:id', ctrl.destroy);
+// DELETE step
+router.delete('/steps/:id', ctrl.destroy);
 
 // UPDATE step
 router.put('/steps/:id', ctrl.update);

@@ -4,6 +4,7 @@ block content
   .container
     .row
       .col-lg-12.col-md-12
+
         h1 Show All Steps
 
         table(class='table table-hover')
@@ -18,3 +19,6 @@ block content
               td #{step.Steps_number}
               td
                 a(href="/steps/#{step.StepID}/edit") Edit
+              td
+                form(class='form', method='POST', action="/steps/#{step.StepID}?_method=DELETE")
+                  button(type="submit" class="btn btn-danger") Delete Steps

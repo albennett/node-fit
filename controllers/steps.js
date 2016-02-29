@@ -43,14 +43,15 @@ module.exports = {
   //   });
   // },
 
-  // // delete note
-  // destroy (req, res) {
-  //   req.note.remove((err) => {
-  //     if (err) throw err;
-
-  //     res.redirect('/notes');
-  //   });
-  // },
+  // delete note
+  destroy (req, res) {
+    db.run(`DELETE FROM Steps WHERE StepID = $id;`, {
+      $id: +req.params.id
+    }, function (err) {
+      if (err) throw err;
+      res.redirect('/steps')
+    });
+  },
 
   // edit note
   edit (req, res) {
