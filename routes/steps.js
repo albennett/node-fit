@@ -13,9 +13,6 @@ router.post('/steps', ctrl.create);
 // // GET new step form
 router.get('/steps/new', ctrl.newStep);
 
-// //GET show step
-// router.get('/steps/:id', ctrl.show);
-
 // DELETE step
 router.delete('/steps/:id', ctrl.destroy);
 

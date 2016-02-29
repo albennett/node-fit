@@ -32,16 +32,9 @@ module.exports = {
       }, function (err) {
         if (err) throw err;
         console.log('last ID', this.lastID);
-        res.send('SAVED STEPS!');
+        res.redirect('/steps');
       });
   },
-
-  // // show note
-  // show (req, res) {
-  //   res.render('show-note', {
-  //     note: req.note
-  //   });
-  // },
 
   // delete note
   destroy (req, res) {
